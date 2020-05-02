@@ -3,23 +3,12 @@ const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const merge = require('merge-stream');
 
-
-/*
-Top level tsak 
-gulp.task - Define task 
-gulp.scr - Points to the folder to input  
-gulp.dest - Points to the folder to output 
-gulp.watch - Wathc Files and folders for changes 
-
-*/
-
 // Log message 
 gulp.task('message', function () {
     return console.log("Whoa Max! Gulp is running!");
 });
 
-
-//Optimize Image 
+// Optimize Image 
 gulp.task('imagemin', function () {
     gulp.src('src/public/**/*')
         .pipe(imagemin())
@@ -28,7 +17,6 @@ gulp.task('imagemin', function () {
 
 // Default 
 gulp.task('default', gulp.parallel('message','imagemin'));
-
 
 // //Copy All HTML File 
 // gulp.task('copyhtml', function () {
